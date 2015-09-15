@@ -3,7 +3,7 @@
     "description": "Bitcoin payment module using the bitpay.com service",
     "keywords": ["magento","bitcoin"],
     "minimum-stability": "stable",
-    "type": "magento-plugin",
+    "type": "magento-module",
     "homepage": "https://github.com/bitpay/magento-plugin",
     "license": "MIT",
     "support": {
