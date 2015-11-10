@@ -115,6 +115,7 @@
                 <title>Bitcoin</title>
                 <network>testnet</network>
                 <debug>0</debug>
+                <autoloader>1</autoloader>
                 <notification_url>bitpay/ipn</notification_url>
                 <redirect_url>checkout/onepage/success</redirect_url>
                 <speed>medium</speed>

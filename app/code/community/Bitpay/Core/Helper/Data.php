@@ -35,6 +35,17 @@ class Bitpay_Core_Helper_Data extends Mage_Core_Helper_Abstract
     }
 
     /**
+     * In some cases, the Bitpay autoloader is not required, and will actually
+     * break things.
+     *
+     * @return boolean
+     */
+    public function useAutoloader()
+    {
+        return (boolean) \Mage::getStoreConfig('payment/bitpay/autoloader');
+    }
+
+    /**
      * Returns true if Transaction Speed has been configured
      *
      * @return boolean
@@ -72,7 +83,7 @@ class Bitpay_Core_Helper_Data extends Mage_Core_Helper_Abstract
      */
     public function registerAutoloader()
     {
-        if (true === empty($this->_autoloaderRegistered)) {
+        if ($this->useAutoloader() && true === empty($this->_autoloaderRegistered)) {
             $autoloader_filename = \Mage::getBaseDir('lib').'/Bitpay/Autoloader.php';
 
             if (true === is_file($autoloader_filename) && true === is_readable($autoloader_filename)) {
